@@ -47,3 +47,7 @@
 .history
 
 bin/*
+
+.project
+.settings/*
+.classpath
