@@ -1,31 +1,35 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
-public class Br{
-    static int nb = 0;
-    public int nbr;
-    public ArrayList<String> premiss = new ArrayList<String>();
-    public ArrayList<String> action = new ArrayList<String>();
-    {
-        nb+=1;
+public class Br {
+    public ArrayList<Regle> baseRegles = new ArrayList<Regle>();
+    public Br addRegle(Regle regle){
+        this.baseRegles.add(regle);
+        return this;
     }
-
-    Br(String premiss, String action){
-        this.nbr = nb;
-        // this.regle.add(Arrays.asList(premiss.split(",")));
-        // this.regle.add(Arrays.asList(action.split(",")));
-        this.premiss.addAll(Arrays.asList(premiss.split(",")));
-        this.action.addAll(Arrays.asList(action.split(",")));
-
-        
-    }
-    @Override
+    
     public String toString() {
-        
-        return "r" +this.nbr + "--> SI: " + this.premiss.toString() + " , Alors: "+ this.action.toString();
+        String result = "";
+        for (Regle regle : baseRegles) {
+            result+= regle.toString()+ "\n"; 
+        }
+        return result;
     }
 
+    public Regle getRegleApplicable(ArrayList<String> bf) throws Exception{
+        Regle rApp = null;
+        for (Regle regle : this.baseRegles) {
+            if(bf.containsAll(regle.premiss)){
+
+                rApp = regle;
+                break;
+            }
+        }
+        if(rApp==null){
+            throw new Exception("error no base"); 
+        }
+        return  rApp;
+
+    }
 }

@@ -14,15 +14,16 @@ public class App {
         bf.add("B");
 
         // base de regles
-        Br br = new Br("F,C", "K,j");
-        Br br2 = new Br("A,B", "D,L");
-
-        // ChainageAvant.solve(bf,br,f);
+        Regle r1 = new Regle("K,L", "K,j");
+        Regle r2 = new Regle("E", "K,j");
+        Br bRegle = new Br();
+        bRegle.addRegle(r1).addRegle(r2);
+       
+        ChainageAvant.solve(bf,bRegle,f);
 
         // prints
         // System.out.println(bf.toString());
-        System.out.println(br.toString());
-        System.out.println(br2.toString());
-        // System.out.println(f);
+        // System.out.println(br.toString());
+        // System.out.println(bRegle);
     }
 }
