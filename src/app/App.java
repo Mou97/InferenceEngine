@@ -59,7 +59,7 @@ public class App {
             Regle r ;
             String [] temp ;
             while(line !=null){
-                temp = line.split(" ");
+                temp = line.trim().split("\\s+");
                 r = new Regle(temp[0].trim(), temp[1].trim());
                 bRegle.addRegle(r);
                 line= reader.readLine();  
