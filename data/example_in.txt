@@ -1,0 +1,3 @@
+1st line => Fait: H 
+2nd line => BF: B,C
+rest     => Regles

@@ -25,7 +25,10 @@ public class App {
         // workaround for global string variable problem
         f+=fVal.get(0);
 
-        // Print base de faits;
+        // print base de faits
+        System.out.println(bf.toString());
+
+        // Print base de regles;
         System.out.println(bRegle.toString());
 
         // Chainage avant
@@ -33,7 +36,6 @@ public class App {
 
 
         // prints
-        // System.out.println(bf.toString());
         // System.out.println(br.toString());
         // System.out.println(bRegle);
     }
@@ -50,7 +52,7 @@ public class App {
             // read second line
             line = reader.readLine();
             bf.addAll(Arrays.asList(line.split(",")));
-            System.out.println(bf.toString());
+            
 
             line= reader.readLine();
             
@@ -58,7 +60,7 @@ public class App {
             String [] temp ;
             while(line !=null){
                 temp = line.split(" ");
-                r = new Regle(temp[0].strip(), temp[1].strip());
+                r = new Regle(temp[0].trim(), temp[1].trim());
                 bRegle.addRegle(r);
                 line= reader.readLine();  
 
