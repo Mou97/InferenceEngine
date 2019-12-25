@@ -9,9 +9,9 @@ public class ChainageAvant{
                 Regle regAppl =  bRegle.getRegleApplicable(bf);
                 regAppl.deactivate();
                 // TODO: add regApp to a stack
-                System.out.println("la regle applicable est : \n"+regAppl.toString());
+                System.out.println("la regle applicable est : \n"+regAppl.toString()+"\n");
                 bf.addAll(regAppl.action);
-                System.out.println("BF:\n"+ bf.toString());
+                System.out.println("BF pour cet iteration:  "+ bf.toString() + "\n");
 
             }
             if(bf.contains(f)){
