@@ -4,20 +4,28 @@ import java.util.ArrayList;
 
 public class ChainageAvant{
     public static void solve(ArrayList<String> bf,Br bRegle,String f){
-        
         try {
-            bRegle.getRegleApplicable(bf);
-                
-            } catch (Exception e) {
-                System.out.println(e);
+            while (!bf.contains(f) && bRegle.countRegleApplicable(bf)>0) {
+                Regle regAppl =  bRegle.getRegleApplicable(bf);
+                regAppl.deactivate();
+                // TODO: add regApp to a stack
+                System.out.println("la regle applicable est : \n"+regAppl.toString());
+                bf.addAll(regAppl.action);
+                System.out.println("BF:\n"+ bf.toString());
+
             }
+            if(bf.contains(f)){
+                System.out.println( "La regle: " + f + "  est etabli");
+            }else{
+                System.out.println( "La regle: " + f + "  n'est pas etabli");
+
+            }
+        } catch (Exception e) {
+                System.out.println(e);
+        }
         // System.out.println(!bf.contains(f));
 
-        // while (!bf.contains(f) ) {
-
-
-        //     System.out.println(bf.contains(f));
-        // }
+       
     }
 }
 
