@@ -31,8 +31,25 @@ public class App {
         // Print base de regles;
         System.out.println(bRegle.toString());
 
-        // Chainage avant
+
+        // System.out.println("Chainage Avant: -------------------\n");
+
+
+        // // Chainage avant
         ChainageAvant.solve(bf,bRegle,f);
+
+        System.out.println("--------------------------------------\n--------------------------------------");
+
+        // Chainage arriere
+        System.out.println("Chainage Arriere: --------------------\n");
+
+        
+        System.out.println(ChainageArriere.solve(bf, bRegle, fVal));
+        
+        System.out.println( ChainageArriere.solve(bf, bRegle, fVal)? "La regle " + f + " est etabli": "La regle " + f + " n'est pas etabli" );
+
+       
+
 
 
         // prints

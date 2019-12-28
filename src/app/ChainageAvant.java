@@ -25,6 +25,7 @@ public class ChainageAvant{
                 for (Regle r : treeRegle) {
                     System.out.println(r);
                 }
+
                 
             }else{
                 System.out.println( "La regle: " + f + "  n'est pas etabli");

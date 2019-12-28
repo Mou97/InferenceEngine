@@ -1,11 +1,12 @@
-H
-B,C
-B,D,E   F
-G,D     A
-C,F     A
-B       X
-D       E
-X,A     H
-C       D
-X,C     A
-X,B     D
+F
+A,D,E,G
+A,B,C   H
+A,U,C   F
+E,G,B   S
+D,G     C
+A,E     B
+U,S,T   F
+G,H     R
+D,E     T
+R,S,H   F
+A,U     B

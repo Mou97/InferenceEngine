@@ -44,4 +44,37 @@ public class Br {
         }
         return counter;
     }
+
+    public Regle getRegleChainageArriere(String f) throws Exception{
+        Regle reg = null;
+        for(Regle regle:this.baseRegles){
+            if(regle.action.contains(f) && regle.active){
+                reg = regle;
+                break;
+            }
+        }
+        if(reg==null){
+            throw new Exception("error no base"); 
+        }
+        return  reg;
+    }
+
+    public int countRegleChainageArriere(String f){
+        int counter = 0;
+        for (Regle regle : this.baseRegles) {
+            if(regle.action.contains(f) &&  regle.active){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public Br clone(){
+        Br newBr = new Br();
+        for (Regle regle : this.baseRegles) {
+            newBr.addRegle(regle);
+        }
+
+        return newBr;
+    }
 }
