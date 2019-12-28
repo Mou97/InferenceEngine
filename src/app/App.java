@@ -46,7 +46,7 @@ public class App {
         // Chainage arriere
         System.out.println("Chainage Arriere: --------------------\n");
 
-        System.out.println("Base des faits ---> \n" + bf.toString());
+        System.out.println("Base des faits ---> " + bf2.toString() +"\n");
 
         // reactivate all rules   
         bRegle.init();

@@ -13,7 +13,7 @@ public class ChainageArriere{
             System.out.println("Fait a verifier : " +  f.get(f.size()-1));
             String firstFait =  f.get(f.size()-1);
             if(demBut(bf, bregle, firstFait)){
-                System.out.println(firstFait + " est verifie");
+                System.out.println("{" + firstFait + "} est verifie");
                 bf.add(firstFait);
                 f.remove(firstFait);
                 res = solve(bf, bregle, f);
