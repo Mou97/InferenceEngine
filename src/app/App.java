@@ -9,14 +9,17 @@ import app.Br;
 import app.ChainageAvant;
 
 public class App {
+     // base de faits pour Chainage avant
+    public static ArrayList<String> bf = new ArrayList<String>();
+     // base de faits pour Chainage arriere
+    public static ArrayList<String> bf2 = new ArrayList<String>();
 
     public static void main(String[] args) throws Exception {
         // fait
         String f = new String();
         ArrayList<String> fVal = new ArrayList<String>();
        
-        // base de faits
-        ArrayList<String> bf = new ArrayList<String>();
+       
         // base de regles
         Br bRegle = new Br();
 
@@ -32,7 +35,7 @@ public class App {
         System.out.println(bRegle.toString());
 
 
-        // System.out.println("Chainage Avant: -------------------\n");
+        System.out.println("Chainage Avant: -------------------\n");
 
 
         // // Chainage avant
@@ -43,10 +46,13 @@ public class App {
         // Chainage arriere
         System.out.println("Chainage Arriere: --------------------\n");
 
+        System.out.println("Base des faits ---> \n" + bf.toString());
+
+        // reactivate all rules   
+        bRegle.init();
+        System.out.println(ChainageArriere.solve(bf2, bRegle, fVal));
         
-        System.out.println(ChainageArriere.solve(bf, bRegle, fVal));
-        
-        System.out.println( ChainageArriere.solve(bf, bRegle, fVal)? "La regle " + f + " est etabli": "La regle " + f + " n'est pas etabli" );
+        System.out.println( ChainageArriere.solve(bf2, bRegle, fVal)? "La regle " + f + " est etabli": "La regle " + f + " n'est pas etabli" );
 
        
 
@@ -69,6 +75,7 @@ public class App {
             // read second line
             line = reader.readLine();
             bf.addAll(Arrays.asList(line.split(",")));
+            bf2.addAll(Arrays.asList(line.split(",")));
             
 
             line= reader.readLine();

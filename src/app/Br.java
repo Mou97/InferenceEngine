@@ -69,12 +69,9 @@ public class Br {
         return counter;
     }
 
-    public Br clone(){
-        Br newBr = new Br();
+    public void init(){
         for (Regle regle : this.baseRegles) {
-            newBr.addRegle(regle);
+            regle.activate();
         }
-
-        return newBr;
     }
 }
