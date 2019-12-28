@@ -10,7 +10,7 @@ public class ChainageArriere{
             res = true;
         }else{
             // TODO: add to stack
-            System.out.println("faits a rechercher : " +  f.get(f.size()-1));
+            System.out.println("Fait a verifier : " +  f.get(f.size()-1));
             String firstFait =  f.get(f.size()-1);
             if(demBut(bf, bregle, firstFait)){
                 System.out.println(firstFait + " est verifie");
@@ -39,7 +39,7 @@ public class ChainageArriere{
                     r.deactivate();
 
                     // if(bf.containsAll(r.action)){
-                    System.out.println("faits a rechercher : " +  r.premiss);
+                    System.out.println("Premises a verifier : " +  r.premiss);
                     
                     res = solve(bf, bregle, r.premiss);
 
