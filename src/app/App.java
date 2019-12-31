@@ -54,7 +54,8 @@ public class App {
         
         System.out.println( ChainageArriere.solve(bf2, bRegle, fVal)? "La regle " + f + " est etabli": "La regle " + f + " n'est pas etabli" );
 
-       
+        System.out.println("Base des faits apres l'application du chainage arriere: \n" + bf2.toString() +"\n");
+        
 
 
 
